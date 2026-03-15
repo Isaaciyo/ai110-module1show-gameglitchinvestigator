@@ -26,12 +26,26 @@ It wrote the code, ran away, and now the game is unplayable.
 ## 📝 Document Your Experience
 
 - [ ] Describe the game's purpose.
+   It's a guessing game, where you try to guess a pre-determined number(secret) from na range of numbers.
+
 - [ ] Detail which bugs you found.
+
+   - I noticed the game kept telling me to guess higher when the correct guess was actually lower, and vice-versa
+   - I also noticed the range of numbers to guess from were not correctly assigned to the difficulty ranges (eg. 1-100 for Normal but 1-50 for Hard).
+   - I also noticed the numbers of attempts were not correctly assigned to the difficulty ranges (eg. 5 attempts for easy but 7 attempts for Normal).
+   - I also noticed I couldn't restart the game after I had clicked on the new game button twice
+
+
 - [ ] Explain what fixes you applied.
+
+   -  I fixed the numerical comparison between the numbers, because they were being compared as strings instead of integers.
+   -  The game was hardcoded to include numbers from 1-100 no matter the difficulty, so I included an conditional statement for the number ranges of each diffculty to reflect on the actual game when the diffciulties are changed.
+   -  The same issue as the above occured, but in this case the allowed attempts for each difficutly were not reflected, so I added a conditional statement to fix that.
+   - The New Game button wasn't resetting the game, and that was because the status of each new game was never set to 0, so I added that line of code.
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+- [![alt text](image.png) ] [Insert a screenshot of your fixed, winning game here]
 
 ## 🚀 Stretch Features
 
